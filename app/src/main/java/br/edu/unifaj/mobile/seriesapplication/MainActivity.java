@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     } //fim do metodo
-    public void validar(View v){
+
+    public void validar(View v) {
         EditText titulo = findViewById(R.id.main_edittext_titulo);
         EditText genero = findViewById(R.id.main_edittext_genero);
         EditText protagonista = findViewById(R.id.main_edittext_protagonista);
@@ -33,21 +34,32 @@ public class MainActivity extends AppCompatActivity {
 
         if (titulo.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "Erro: Insira um texto", Toast.LENGTH_SHORT).show();
-        }else if (genero.getText().toString().trim().isEmpty()){
+        } else if (genero.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "Erro: Insira um genero", Toast.LENGTH_SHORT).show();
-        }else if (protagonista.getText().toString().trim().isEmpty()){
+        } else if (protagonista.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "Erro: Insira um protagonista", Toast.LENGTH_SHORT).show();
-        }else if (anoLancamento.getText().toString().trim().isEmpty()){
+        } else if (anoLancamento.getText().toString().trim().isEmpty()) {
             Toast.makeText(this, "Erro: Insira um ano", Toast.LENGTH_SHORT).show();
-        }else if (temporadas.getText().toString().trim().isEmpty()){
-            Toast.makeText(this, "Erro: Insira um numero de temporadas", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(this, "Todos os dados estão validos!", Toast.LENGTH_SHORT).show();
-        }
-    }
+        } else {
+            try {
+                String valorTexto = anoLancamento.getText().toString().trim();
+                int valor = Integer.parseInt(valorTexto);
 
-    public void exibir(View v){
-        Toast.makeText(this, "Nome: Yuri Chrystian de Oliveira", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "RA: 12427365", Toast.LENGTH_SHORT).show();
-    }
-}//fim da classe
+                if (valor > 2025) {
+                    Toast.makeText(this, "Não permitido ano acima do atual", Toast.LENGTH_SHORT).show();
+                } else if (temporadas.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(this, "Erro: Insira um numero de temporadas", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Todos os dados estão válidos!", Toast.LENGTH_SHORT).show();
+                }
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, "Erro: Ano inválido", Toast.LENGTH_SHORT).show();
+            }
+        }
+}
+
+        public void exibir (View v){
+            Toast.makeText(this, "Nome: Yuri Chrystian de Oliveira", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "RA: 12427365", Toast.LENGTH_SHORT).show();
+        }
+    }//fim da classe
