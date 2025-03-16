@@ -8,12 +8,128 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/main_textview_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Menu de Series"
+        android:textSize="30dp"
+        android:textColor="#D91414"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/main_textview_titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Titulo"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_textview_menu"
+         />
+    <EditText
+        android:id="@+id/main_edittext_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Titulo"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_textview_titulo"
+        />
+    <TextView
+        android:id="@+id/main_textview_genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genero"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_edittext_titulo"
+        />
+    <EditText
+        android:id="@+id/main_edittext_genero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Genero"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_textview_genero"
+        />
+    <TextView
+        android:id="@+id/main_textview_protagonista"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Protagonista"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_edittext_genero"
+        />
+    <EditText
+        android:id="@+id/main_edittext_protagonista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Progonista"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_textview_protagonista"
+        />
+    <TextView
+        android:id="@+id/main_textview_ano"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ano de Lançamento"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_edittext_protagonista"
+        />
+    <EditText
+        android:id="@+id/main_edittext_ano"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ano de Lançamento"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_textview_ano"
+        />
+    <TextView
+        android:id="@+id/main_textview_temporadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temporadas"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_edittext_ano"
+        />
+    <EditText
+        android:id="@+id/main_edittext_temporadas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Temporadas"
+        android:textSize="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/main_textview_temporadas"
+        />
+    <Button
+        android:id="@+id/main_button_validar"
+        android:onClick="validar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/main_button_exibir"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Validar"
+        app:layout_constraintTop_toBottomOf="@+id/main_edittext_temporadas"
+        />
+    <Button
+        android:id="@+id/main_button_exibir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="exibir"
+        android:text="Exibir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/main_button_validar"
+        app:layout_constraintTop_toBottomOf="@+id/main_edittext_temporadas"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
